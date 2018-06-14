@@ -1,0 +1,19 @@
+1. 消息提示
+    用flash(message)发布消息message
+    模板输出message
+    {{ get_flashed_messages()[0] }}   //get_flashed_meaasges()得到的是一个消息的数组
+
+
+
+2.表单验证
+    从request.form获取提交的表单
+    从表单获取某个字段  request.form.get(key)
+
+    //html提交表单
+    form里面的action写需要提交到的url,method填方法，一个input(type 是submit)点击之后将提交表单到固定的url
+
+3.处理异常（访问不存在的url资源）
+    @app.errorhandler(404)然后定义一个template用来显示404的页面
+
+4.抛出错误
+    @abort(404)
