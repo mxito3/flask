@@ -1,0 +1,15 @@
+1. 用render_template渲染html
+2. 使用jinja2模板引擎
+3. 利用render_template可以传递值或对象给模板。模板用插值表达式就可以使用。
+4. 在模板里使用for
+  {% for user in users%}  //users是传过来的参数
+  {% endfor %}
+5. 在模板使用if
+  {% if user %}       //如果传过来的参数user不为空
+  {% else %}
+  {% endif %}
+6. 模板继承
+  {% extends 'parent.html' %}
+  {% block content %}        //content是一个标识符，说明这个block里面实现的是基类的名为content的block
+  //这里放子类特有的东西
+  {% endblock %}
