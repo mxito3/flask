@@ -1,0 +1,10 @@
+1.test=('test')
+    test的类型是str(用type(test)可以得到数据的类型)
+    要使得test是一个元组，必须在第一个参数后加,
+2.cursor.fetchall()得到的是一个元组的数组。
+
+3.sql语句包含变量的时候要传入数据。
+
+4.往数据库插入数据后必须cursor.commit()才能提交修改
+
+5.flash是传送消息给将要渲染的视图
