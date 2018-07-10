@@ -1,0 +1,6 @@
+1.html里面写模板的时候只有在取传值的时候需要加两个{}，其他都是一个{}
+2.引入css文件可以用相对路径，也可以用url_for
+    eg:
+    <link rel="stylesheet" href="../static/index.css">
+    或者
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">

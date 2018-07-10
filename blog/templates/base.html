@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/index.css">
+    <script src="../static/js/index.js" type="text/javascript"></script>
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <div>
+        <h1>Flask</h1>
+        <a href="{{url_for('logout')}}"></a>
+    </div>
+</header>
+    {% block mainContent %}
+    {% endblock %}
+</body>
+</html>
