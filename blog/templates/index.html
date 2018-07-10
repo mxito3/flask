@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
 {% block mainContent %}
 <div>
+    <form action="/addComment" method="post">
     <h3>title:</h3>
-    <input type="text"/>
+    <input type="text" name="title"/>
     <h3>content:</h3>
-    <textarea id="textarea">
-
+    <textarea id="textarea" name="comment">
     </textarea>
     <br/>
-    <button>share</button>
-
+    <input type="submit" value="share">
+    </form>
 </div>
+{% if articles %}
+<ul>
+{% for mes in articles %}
+    <li>
+        <h3>{{mes[0]}}</h3>
+        <p>{{mes[1]}}</p>
+    </li>
+{% endfor %}
+{% else %}
+    <h1>你还没有博客奥</h1>
+{% endif %}
+</ul>
 {% endblock %}

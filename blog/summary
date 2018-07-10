@@ -4,3 +4,10 @@
     <link rel="stylesheet" href="../static/index.css">
     或者
     <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+3.提交事物
+    db.commit()
+4.列表与元组的互相转化
+    list(元组名)
+    tuple(列表名)
+5.sql语句传多个参数的时候传元组进去
+6.
