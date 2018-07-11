@@ -1,8 +1,12 @@
+
 from flask import Flask,render_template,url_for,request,flash
 import pymysql
-
+import sys
+sys.path.append(r'D:\github\flask\blog')
+from config import sql
 app=Flask(__name__)
 app.secret_key=123456
+sq=sql.Sql("localhost",3306,'root','domore0325','blog')
 @app.route('/')
 def root():
     return render_template('login.html')
@@ -17,14 +21,15 @@ def login():
     userName=form.get('userName')
     password=form.get('password')
     #查询
-    con=pymysql.connect(host="localhost",user='root',passwd='domore0325',db='blog',port=3306)
-    cursor=con.cursor()
-    cursor.execute('select password from user where userName=%s',userName)
-    data=cursor.fetchone()
-    con.close()
+    sq.connect()
+    command='select password from user where userName='+"'"+str(userName)+"'"
+    print(command)
+    data=sq.extractSql(command)
+    sq.close()
+    print('数据是')
     print(data)
     articles=None
-    if not data is None and data[0] == password:
+    if data and data[0][0]==password:
         #flash("login sucess")
         return render_template('index.html',articles=articles)
     else:
@@ -37,14 +42,14 @@ def addComment():
     title=form.get('title')
     comment=form.get('comment')
     #写进数据库
-    con=pymysql.connect(host='localhost',user='root',passwd='domore0325',db='blog',port=3306)
-    cursor=con.cursor()
-    cursor.execute('insert into blog(title,comment)values (%s,%s)',(title,comment))
-    con.commit()
-    cursor.execute('select title,comment from blog')
-    data = list(cursor.fetchall())[::-1]
-    con.close()
+    command='insert into blog(title,comment)values '+'('+"'"+title+"','"+comment+ "')"
+    print("命令是"+command)
+    sq.connect()
+    sq.extractSql(command)
+    data = list(sq.extractSql('select title,comment from blog'))[::-1]
+    sq.close()
     return render_template('index.html',articles=data)
 
 if __name__=="__main__":
     app.run(debug='true',port=8080)
+

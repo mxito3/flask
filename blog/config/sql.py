@@ -1,5 +1,4 @@
 import pymysql
-
 class Sql:
     def __init__(self,host,port,user,passwd,db):
         self.host=host
@@ -16,5 +15,4 @@ class Sql:
         self.cursor.execute(command)
         self.con.commit()
         return self.cursor.fetchall()
-
 
