@@ -12,3 +12,15 @@
 5.sql语句传多个参数的时候传元组进去
 6.列表倒叙
     list=list[::-1]  原理：从list的最后一个元素开始复制，每次间隔-1个元素，相当于 a[-1:-len(list)-1:-1]  可以看成是len(list)的模。
+7.templates内文件的包含其他js或者css文件（在static文件夹的子文件夹下）的时候可以用url_for来指示文件位置
+    eg:{{url_for('static',filename='/javascript/test.js')}}
+    指定 ./static/javascript/test.js
+8.templates里面的html可以直接通过ajax和服务器交互，因为没有跨域
+
+9.跨域判断：
+    a.判断协议是不是相同，http和https
+    b.判断主机是不是一致
+    c.判断端口号是不是一致
+
+10.监听所有域的请求
+    app.run(host='0.0.0.0')

@@ -9,7 +9,8 @@ app.secret_key=123456
 sq=sql.Sql("localhost",3306,'root','domore0325','blog')
 @app.route('/')
 def root():
-    return render_template('login.html')
+    #return url_for('static',filename='js/index.css')
+    return render_template('intract.html')
 
 @app.route('/logout')
 def logout():
@@ -50,6 +51,7 @@ def addComment():
     sq.close()
     return render_template('index.html',articles=data)
 
+
 if __name__=="__main__":
-    app.run(debug='true',port=8080)
+    app.run(host='0.0.0.0',debug='true',port=8080)
 
