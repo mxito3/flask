@@ -24,3 +24,10 @@
 
 10.监听所有域的请求
     app.run(host='0.0.0.0')
+
+11.引入自定义包
+    得main.py和包所在的文件夹在同一个文件夹下，并且得有一个__init__.py文件。
+    例如sql.py在config下，config和main.py在同一个文件夹下
+
+    导入：
+        from config import sql
