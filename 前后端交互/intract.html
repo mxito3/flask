@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>前后端交互</title>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		$.ajax(
+			{
+				url:"http://localhost:2000/test",
+				type:"GET",
+				success:
+					function(result)
+					{
+						alert(JSON.stringify(result));
+					}
+			}
+		);
+	});
+});
+
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>使用 jQuery AJAX 修改文本内容</h2></div>
+<button>获取其他内容</button>
+
+</body>
+</html>
