@@ -1,0 +1,13 @@
+1.跨域解决
+    res.headers['Access-Control-Allow-Origin']='*'
+    这句话的意思是在将response headers 的Access-Control-Allow-Origin属性设置为'*'
+    来允许所有域访问资源
+
+    这是一个开启白名单的过程,只在测试阶段开启,项目完成之后会直接放在一起，就没有跨域的问题了
+
+2.同源不需要跨域，直接将html放在templates里面
+
+注：本例的intract.py和interact.html在运行的时候要有不同的父文件夹才能体现跨域。
+
+3.利用flask_cors提供的CORS跨域
+	一般情况下利用CORS(app)来为所有路由的所有域提供跨域支持
