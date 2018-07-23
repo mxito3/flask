@@ -1,0 +1,2 @@
+1.cookie
+  cookie 是利用secret_key对session的加密。
