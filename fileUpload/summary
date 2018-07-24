@@ -1,0 +1,5 @@
+1.html form的enctype必须是multipart/form-data
+2.用request.file[form_name]取得上传的文件
+3.文件名字是request.file[form_name].filename获得客户端上传的文件名，用secure_filename()		用来防御一些潜在的攻击
+4.用request.file[form_name].save(save_path)来存储文件
+5.os.path.join()用来连接路径。
