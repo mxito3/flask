@@ -2,14 +2,15 @@
 <html>
 <head>
 	<title>test</title>
-	<!-- <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="index.js"></script> -->
+	<script src="{{url_for('static',filename='js/jquery-1.11.3.min.js')}}" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='js/admin.js')}}"></script>
 </head>
 <body>
 	<form action="http://localhost:8080/upload" method="post"  enctype="multipart/form-data">
 		要展示的标题：<input type="text" name="title"><br>
 		要上传的视频：<input type="file" name="test">
-		<input type="submit" name="提交">
+		<input type="submit" name="提交" id="submit">
 	</form>
+	<span style="color: red" id="tip"></span>
 </body>
 </html>

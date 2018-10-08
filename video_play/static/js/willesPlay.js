@@ -229,3 +229,15 @@ function formatSeconds(value) {
 	}
 	return time;
 }
+
+$(document).ready(function($) {
+	var videoHref=$.cookie('needPlayVideoHref')
+	var videoTitle=$.cookie('needPlayVideoTitle');
+	//改变属性
+
+	$('#playVideo source').attr('src',videoHref);
+	console.log($('#playVideo source').attr('src'));
+	console.log(videoTitle)
+	$('#videoTitle').html(videoTitle);
+	
+});

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>video list</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/videoList.css')}}">
+    <script src="{{url_for('static',filename='js/jquery-1.11.3.min.js')}}" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='js/jquery.cookie.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='js/videoList.js')}}"></script>
+   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="outContainer" style="min-width: 768px;">
+        {% for video in videos %}
+        <div class="col-md-3 cell" >
+            <video width="100%"  class="innerItem" controls id="video{{video.get('index')}}" index="{{video.get('index')}}">
+                <source src="{{ video.get('path')}}" type="video/mp4">
+                </source>
+                当前浏览器不支持 video直接播放，点击这里下载视频： <a href="/">下载视频</a>
+            </video>
+            <br>
+            <h1  id="videoTitle{{video.get('index')}}">{{video.get('title')}}</h1>
+        </div>
+        {% endfor %}
+
+    </div>
+</body>
+
+</html>
