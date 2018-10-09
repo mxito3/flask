@@ -111,6 +111,8 @@ a:hover{
 #willesPlay .playControll .timebar{
 float: left;
 width: calc(100% - 145px);
+width: -webkit-calc(100% - 145px);
+width: -moz-calc(100% - 145px);
 line-height: 48px;
 overflow: hidden;
 margin: 0 auto;
@@ -118,15 +120,19 @@ margin: 0px 0px 0px 20px;
 }
 #willesPlay .playControll .timebar .progress{
 	float: left;
-	width: 80%;
-	margin: 19px 5px;
+	width: -webkit-calc(90% - 86px);
+	width: -moz-calc(90% - 86px);
+	width: calc(90% - 86px);
+	margin: 19px 5%;
 	height: 10px;
 	cursor: pointer;
+
 }
 #willesPlay .playControll .timebar span{
 	float: left;
-	width: 8%;
+	width:43px;
 	text-align: center;
+	
 }
 #willesPlay .otherControl{
 	float: right;
